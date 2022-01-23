@@ -1,0 +1,6 @@
+# Project exclude paths
+/target/
+/.idea/
+/miaosha.iml
+/src/main/resources/application.yml
+/src/main/resources/mybatis-generator-config.xml
