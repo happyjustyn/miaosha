@@ -22,8 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * TODO
- *
  * @author Justyn
  * @version 1.0
  * @date 2022/1/2 22:15
@@ -117,9 +115,8 @@ public class GoodsController {
 
     @GetMapping(value = "/detail/{goodsId}")
     @ResponseBody
-    public Result<GoodsDetailVo> detail(Model model, MiaoshaUser user, @PathVariable("goodsId") Long goodsId) {
+    public Result<GoodsDetailVo> detail(MiaoshaUser user, @PathVariable("goodsId") Long goodsId) {
         GoodsVo goodsVo = goodsService.getGoodsVoByGoodsId(goodsId);
-        model.addAttribute("goods", goodsVo);
         // 还多久秒杀开始
         int remainSeconds = 0;
         // 秒杀状态判断
@@ -135,8 +132,6 @@ public class GoodsController {
         } else {
             miaoshaStatus = 1;
         }
-        model.addAttribute("miaoshaStatus", miaoshaStatus);
-        model.addAttribute("remainSeconds", remainSeconds);
         GoodsDetailVo detailVo = new GoodsDetailVo();
         detailVo.setRemainSeconds(remainSeconds);
         detailVo.setMiaoshaStatus(miaoshaStatus);

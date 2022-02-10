@@ -32,7 +32,8 @@ public class GoodsService {
     /**
      * 减库存
      */
-    public void reduceStock(GoodsVo goods) {
-        miaoshaGoodsDao.reduceStock(goods.getId());
+    public boolean reduceStock(GoodsVo goods) {
+        int count = miaoshaGoodsDao.reduceStock(goods.getId());
+        return count > 0;
     }
 }

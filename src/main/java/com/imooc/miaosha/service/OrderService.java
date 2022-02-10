@@ -50,10 +50,10 @@ public class OrderService {
         orderInfo.setOrderChannel(1);
         orderInfo.setStatus(0);
         orderInfo.setCreateDate(new Date());
-        long orderId = orderInfoDao.insertSelective(orderInfo);
+        orderInfoDao.insertSelective(orderInfo);
         MiaoshaOrder miaoshaOrder = new MiaoshaOrder();
         miaoshaOrder.setUserId(user.getId());
-        miaoshaOrder.setOrderId(orderId);
+        miaoshaOrder.setOrderId(orderInfo.getId());
         miaoshaOrder.setGoodsId(goods.getId());
         miaoshaOrderDao.insertSelective(miaoshaOrder);
 

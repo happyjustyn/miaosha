@@ -9,8 +9,6 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * TODO
- *
  * @author Justyn
  * @version 1.0
  * @date 2021/12/30 0:02

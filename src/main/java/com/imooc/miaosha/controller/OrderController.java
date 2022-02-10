@@ -9,6 +9,7 @@ import com.imooc.miaosha.service.OrderService;
 import com.imooc.miaosha.vo.GoodsVo;
 import com.imooc.miaosha.vo.OrderDetailVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @version 1.0
  * @date 2022/1/16 7:52
  */
+@Controller
 @RequestMapping("/order")
 public class OrderController {
 

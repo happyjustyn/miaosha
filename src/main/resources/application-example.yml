@@ -1,1 +1,71 @@
 # 配置文件示例
+
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ip:3306/miaosha?useUnicode=true&characterEncoding=utf-8
+    username: username
+    password: password
+    druid:
+      max-active: 100
+      initial-size: 10
+      max-wait: 6000
+      min-idle: 10
+      time-between-eviction-runs-millis: 90000
+      min-evictable-idle-time-millis: 1800000
+      test-while-idle: true
+      test-on-return: false
+      test-on-borrow: false
+  rabbitmq:
+    host: ip
+    port: 5672
+    username: username
+    password: password
+    virtual-host: /
+    connection-timeout: 15000
+    listener:
+      simple:
+        # 最小消费者数量
+        concurrency: 10
+        # 最大消费者数量
+        max-concurrency: 20
+        # 指定一个请求能处理多少个消息，如果有事务的话，必须大于等于transaction数量
+        prefetch: 1
+    template:
+      # 生产者重试
+      retry:
+        enabled: true
+
+
+# mybatis
+mybatis:
+  # 实体类别名
+  type-aliases-package: com.imooc.miaosha.domain
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰命名映射
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 3000
+# 开启mybatis日志
+logging:
+  level:
+    com.imooc.miaosha.dao: DEBUG
+
+# custom
+redis:
+  host: ip
+  port: 6379
+  password: password
+  timeout: 30000
+  database: 0
+  pool-max-total: 1000
+  pool-max-idle: 500
+  pool-max-wait: 500
+
+
+
+
