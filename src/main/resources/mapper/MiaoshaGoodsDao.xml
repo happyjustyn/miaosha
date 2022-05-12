@@ -103,7 +103,7 @@
         update miaosha_goods
         set stock_count = stock_count - 1
         where goods_id = #{goodsId}
-          # and stock_count > 0 条件可以避免库存减成负数（排他锁）
+          # and stock_count > 0 条件可以避免库存减成负数
           and stock_count > 0
     </update>
 </mapper>

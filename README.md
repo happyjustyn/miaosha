@@ -66,7 +66,7 @@
   - 利用浏览器的缓存
 - 解决超卖问题
   
-  - 利用msyql的排他锁：减库存的sql中，where语句加上**stock_count > 0**
+  - 减库存的sql中，where语句加上**stock_count > 0**
 - 避免重复秒杀
   
   - 秒杀订单加唯一索引：`UNIQUE KEY u_uid_gId (user_id,goods_id) USING BTREE`
@@ -87,7 +87,7 @@
   
 - 请求先入队缓冲，异步下单，增强用户体验
   
-- 分库分表（待自我学习、mycat）
+- 分库分表（mycat）
   
 
 ##### 思路：减少数据库访问
